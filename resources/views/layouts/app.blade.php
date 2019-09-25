@@ -11,79 +11,113 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 <div id="app">
-    <div class="uk-background-primary uk-light">
+    <div class="navmain">
         <nav class="uk-navbar-container uk-navbar-transparent">
             <div class="uk-container">
                 <div class="uk-navbar" uk-navbar>
                     <div class="uk-navbar-left">
-                        <a class="uk-navbar-item uk-logo" href="/">{{ config('app.name', 'Laravel') }}</a>
-
-                        <ul class="uk-navbar-nav">
-                            <li><a href="{{ route('demo') }}">Theme Demo</a></li>
-                            <li>
-                                <a href="#">Useful Links</a>
-                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-3">
-                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-3" uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">Laravel</li>
-                                                @include('laravel')
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">UIkit</li>
-                                                @include('uikit')
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li class="uk-nav-header">Vue.js</li>
-                                                @include('vuejs')
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
+                        <a class="uk-navbar-item uk-logo uk-padding-small" href="/"><img src="{{asset('images/logosmall.png')}}" width="90px"  alt=""></a>
                     </div>
                     <div class="uk-navbar-right">
-                        <ul class="uk-navbar-nav">
-                            <!-- Authentication Links -->
-                            @guest
-                                <li>
-                                    <a href="{{ route('login') }}">{{ __('Log In') }}</a>
-                                </li>
-                                @if (Route::has('register'))
-                                    <li>
-                                        <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                                    </li>
-                                @endif
-                            @else
-                                <li>
-                                    <a href="#">
-                                        {{ Auth::user()->name }}
-                                    </a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                                style="display: none;">
-                                                @csrf
-                                            </form>
-                                        </li>
-                                    </div>
-                                </li>
-                            @endguest
+                        <ul class="uk-navbar-nav">
+                            <div>
+                                <a class="uk-navbar-toggle uk-visible@m" uk-search-icon href="#"></a>
+                                <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
+                                    <form class="uk-search uk-search-navbar uk-width-1-1">
+                                        <input class="uk-search-input" type="search" placeholder="Search..." autofocus>
+                                    </form>
+                                </div>
+                            </div>
+                                <a class="uk-navbar-toggle" href="#" uk-toggle="target: #menu">
+                                    <span uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">Menu</span>
+                                </a>
+
+                                {{--    menu offcanvas --}}
+
+
+                                <div id="menu" uk-offcanvas="mode:slide; overlay: true;flip:true;">
+                                    <div class="uk-offcanvas-bar">
+
+                                        <button class="uk-offcanvas-close" type="button" uk-close></button>
+                                        <!-- Authentication Links -->
+                                        @guest
+
+                                        <h3>Menu</h3>
+
+
+                                            <div class="uk-navbar-item uk-hidden@m">
+                                                <form class="uk-search uk-search-navbar">
+                                                    <span uk-search-icon></span>
+                                                    <input class="uk-search-input" type="search" placeholder="Search...">
+                                                </form>
+                                            </div>
+                                            <li>
+                                                <a href="{{ route('login') }}">Home</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ route('login') }}">Services</a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="{{ route('login') }}">Gallery</a>
+                                            </li>
+
+
+
+                                            <li>
+                                                <a href="{{ route('login') }}">About</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="{{ route('login') }}">Contact</a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href="{{ route('login') }}">{{ __('Log In') }}</a>
+                                            </li>
+                                            @if (Route::has('register'))
+                                                <li>
+                                                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                </li>
+                                            @endif
+                                        @else
+                                            <li>
+                                                <a href="#">
+                                                    {{ Auth::user()->name }}
+                                                </a>
+                                                <div class="uk-navbar-dropdown">
+                                                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                                                        <li>
+                                                            <a href="{{ route('logout') }}"
+                                                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                                {{ __('Logout') }}
+                                                            </a>
+
+                                                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                                  style="display: none;">
+                                                                @csrf
+                                                            </form>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </li>
+
+                                        @endguest
+
                         </ul>
+                                    </div>
+
+
                     </div>
                 </div>
             </div>
@@ -93,6 +127,11 @@
     <main>
         @yield('content')
     </main>
+
+
+
+
+
 
     <footer class="uk-section uk-section-xsmall uk-section-secondary">
         <div class="uk-container">
