@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="uk-position-relative uk-visible-toggle uk-light banner-slider" tabindex="-1" uk-slideshow>
+    <div class="uk-position-relative uk-visible-toggle uk-light banner-slider" tabindex="-1" uk-slideshow style=" ">
 
         <ul class="uk-slideshow-items">
             <li>
                 <div class="uk-grid uk-padding-small">
              <div class="uk-width-1-2 uk-padding-large">
 
-                 <h2 class="uk-margin-medium-top" style="color: black">The new era of Technology .....</h2>
+                 <h2 class="uk-margin-medium-top animated  slideInLeft " style="color: black">The new era of <span style="color:#F44B00">Technology .....</span></h2>
                  <p style="color: black">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid architecto aspernatur consequatur consequuntur, culpa deserunt dicta eaque ipsam labore, maiores maxime natus nihil numquam perferendis, repellat rerum sequi suscipit.</p>
                  <button class="uk-button-default uk-button" style="background: #F05704;color:white;border-radius: 300px">View More</button>
 
@@ -18,7 +18,7 @@
 
                     <div class="uk-width-1-2">
 
-                        <img class="uk-blend-luminosity" src="{{asset('images/banner3.svg')}}" alt="Blend Multiply" style="height: 400px;" >
+                        <img class="uk-blend-luminosity animated zoomIn delay-1s" src="{{asset('images/banner3.svg')}}" alt="Blend Multiply" style="height: 400px;"  >
 
 
 
@@ -50,12 +50,13 @@
     </div>
 
 
-    <div class="uk-container">
 
-        <div class="uk-section">
+        <div class="uk-section" style="background-color:#F6F6F6">
+
+            <div class="uk-container wow slideInUp">
 
 {{--            <h2 class=" uk-margin-large-bottom uk-text-bold"> Our Features</h2>--}}
-            <h1 class="uk-heading-line uk-margin-large-bottom uk-text-center"><span class="uk-text-bold">Our Features</span></h1>
+            <h1 class="uk-heading-line uk-margin-large-bottom uk-text-center heading wow fadeInLeft"><span class="uk-text-bold">Our <span >Features</span></span></h1>
 
             <div class="uk-grid uk-text-center" id="feature">
 
@@ -64,8 +65,8 @@
 
 
 
-                    <img src="{{asset('images/clean.svg')}}" alt="">
-                    <h2>Clean UI/UX</h2>
+                    <img  class="wow fadeInUp" src="{{asset('images/clean.svg')}}" alt="">
+                    <h2 class="wow fadeInLeft">Clean UI/UX</h2>
 
                     <p class="uk-text-justify"> consectetur adipisicing elit. Aliquid dicta eligendi enim est id ipsum provident rem sequi? Animi aperiam aspernatur deserunt doloribus error in minima molestias repudiandae! Ea, tenetur.</p>
                 </div>
@@ -73,48 +74,49 @@
 
                 <div class="uk-width-1-4@m">
 
-                    <img src="{{asset('images/fine2.svg')}}" alt="">
-                    <h2>Fine Typography</h2>
+                    <img  class="wow fadeInUp" src="{{asset('images/fine2.svg')}}" alt="">
+                    <h2 class="wow fadeInLeft">Fine Typography</h2>
                     <p class="uk-text-justify">consectetur adipisicing elit. Aliquid dicta eligendi enim est id ipsum provident rem sequi? Animi aperiam aspernatur deserunt doloribus error in minima molestias repudiandae! Ea, tenetur.</p>
                 </div>
 
 
                 <div class="uk-width-1-4@m">
 
-                    <img src="{{asset('images/seo.svg')}}" alt="">
-                    <h2>Complete SEO</h2>
-                    <p class="uk-text-justify">consectetur adipisicing elit. Aliquid dicta eligendi enim est id ipsum provident rem sequi? Animi aperiam aspernatur deserunt doloribus error in minima molestias repudiandae! Ea, tenetur.</p>
+                    <img  class="wow fadeInUp" src="{{asset('images/seo.svg')}}" alt="">
+                    <h2 class="wow fadeInLeft">Complete SEO</h2>
+                    <p class="uk-text-justify wow fadeInDown">consectetur adipisicing elit. Aliquid dicta eligendi enim est id ipsum provident rem sequi? Animi aperiam aspernatur deserunt doloribus error in minima molestias repudiandae! Ea, tenetur.</p>
                 </div>
 
 
 
                 <div class="uk-width-1-4@m">
 
-                    <img src="{{asset('images/team.svg')}}" alt="">
-                    <h2>Team Work</h2>
-<p class="uk-text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem delectus est ipsam nobis. Corporis dolorem eos id quasi sint. Aspernatur atque eligendi ipsum, nostrum possimus quam repellendus sit voluptatibus?</p>
+                    <img class="wow fadeInUp" src="{{asset('images/team.svg')}}" alt="">
+                    <h2 class="wow fadeInLeft">Team Work</h2>
+<p class="uk-text-justify wow fadeInDown">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A autem delectus est ipsam nobis. Corporis dolorem eos id quasi sint. Aspernatur atque eligendi ipsum, nostrum possimus quam repellendus sit voluptatibus?</p>
                 </div>
             </div>
         </div>
 
+    </div>
 
 
-
-        <div class="uk-section">
-            <h1 class="uk-heading-line uk-margin-large-bottom uk-text-center"><span class="uk-text-bold">Our Services</span></h1>
+        <div class="uk-section wow fadeInUp" >
+            <div class="uk-container">
+            <h1 class="uk-heading-line uk-margin-large-bottom uk-text-center heading"><span class="uk-text-bold">Our <span>Services</span></span></h1>
 
             <div class="uk-grid " id="services">
                 <div class="uk-width-1-2@m">
                     <div class="uk-grid">
                         <div class="uk-width-1-2">
-                            <img src="{{asset('images/webdevelopment.svg')}}" alt="">
+                            <img class="wow fadeInLeft" src="{{asset('images/webdevelopment.svg')}}" alt="">
                         </div>
                         <div class="uk-width-1-2">
                             <h1>Web Development</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloribus perferendis rerum sequi? Assumenda at beatae delectus deserunt distinctio doloremque et minus natus, necessitatibus omnis provident quae repellendus sequi voluptates.</p>
 
 
-                            <button class="uk-button-default uk-button" style="background: #F05704;color:white;border-radius: 300px">View More</button>
+                            <button class="uk-button-default uk-button wow fadeInLeft" style="background: #F05704;color:white;border-radius: 300px">View More</button>
 
                         </div>
                     </div>
@@ -124,14 +126,14 @@
                 <div class="uk-width-1-2@m">
                     <div class="uk-grid">
                         <div class="uk-width-1-2">
-                            <img src="{{asset('images/mobile.svg')}}" alt="">
+                            <img  class="wow fadeInLeft" src="{{asset('images/mobile.svg')}}" alt="">
                         </div>
                         <div class="uk-width-1-2">
                             <h1>Apps Development</h1>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloribus perferendis rerum sequi? Assumenda at beatae delectus deserunt distinctio doloremque et minus natus, necessitatibus omnis provident quae repellendus sequi voluptates.</p>
 
 
-                            <button class="uk-button-default uk-button" style="background: #F05704;color:white;border-radius: 300px">View More</button>
+                            <button class="uk-button-default uk-button wow fadeInLeft" style="background: #F05704;color:white;border-radius: 300px">View More</button>
 
                         </div>
                     </div>
@@ -147,10 +149,11 @@
 
 
         </div>
+
     </div>
 
 
-    <div class="uk-container-fluid">
+    <div class="uk-container-fluid wow fadeInUp">
 
 
 
@@ -177,7 +180,7 @@
                         </div>
 
                         <div class="uk-width-1-2">
-                            <img src="{{asset('images/digital.svg')}}" alt="">
+                            <img  class=" wow fadeInRight" src="{{asset('images/digital.svg')}}" alt="">
 
                         </div>
 
@@ -187,7 +190,7 @@
                 <li>
                     <div class="uk-grid">
                         <div class="uk-width-1-2">
-                            <img src="{{asset('images/software.svg')}}" alt="">
+                            <img class="wow fadeInLeft" src="{{asset('images/software.svg')}}" alt="">
 
                         </div>
 
@@ -213,7 +216,7 @@
             </div>
         </div>
     </div>
-    <div class="uk-container">
+    <div class="uk-container wow fadeInUp">
         <div class="uk-section uk-margin-large-top" id="subscribe">
            <div class="uk-grid">
                <div class="uk-width-1-2">

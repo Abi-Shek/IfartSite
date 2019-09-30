@@ -1,5 +1,22 @@
 
 
+.uk-navbar-container:not(.uk-navbar-transparent){
+    background-color:#545062!important;
+
+
+}
+.uk-navbar-container:not(.uk-navbar-transparent) .uk-navbar-nav a{
+    color:white!important;
+    font-weight: bold;
+}
+
+.uk-navbar-right .uk-navbar-toggle{
+    color: black!important;
+    font-weight: bold;
+}
+
+
+
 .navmain{
     background:white;
 }
@@ -12,6 +29,21 @@
 #feature img{
     height: 120px;
 }
+
+
+.uk-offcanvas-flip .uk-open > .uk-offcanvas-bar{
+
+    background-color:#564A63!important;
+}
+.uk-offcanvas-bar-animation{
+    background-color: #564A63;
+}
+
+.uk-offcanas .uk-navbar-nav a{
+    color:white!important;
+    font-weight: bolder;
+}
+
 
 #feature h2{
     font-size:24px;
@@ -72,6 +104,39 @@
     line-height: 50px;
     text-align: center;
 }
+
+
+.footer{
+   /*background-color:#F2F2F2;*/
+   /* background-color: #03d917;*/
+    background-color: #545062;
+}
+#footer h5{
+    font-weight: bold;
+    color: #F05704;
+}
+.footer li a,.footer p{
+    color:white;
+
+}
+
+.img-banner{
+
+    background-color: lightcyan;
+}
+
+.img-banner img{
+
+    height: 500px;
+
+}
+
+.heading  .uk-text-bold span{
+color: #F44B00;
+}
+
+
+
 
 
 /*.div-banner{*/

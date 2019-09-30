@@ -14,8 +14,36 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
-Route::view('/demo', 'demo')->name('demo');
+//Route::view('/demo', 'demo')->name('demo');
+Route::get('service',function(){
+
+   return view("service");
+
+});
+
+
+Route::get('gallery',function(){
+
+    return view("gallery");
+
+});
+
+
+Route::get('about',function(){
+
+    return view("about");
+
+});
+
+
+Route::get('contact',function(){
+
+    return view("contact");
+
+});
